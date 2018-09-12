@@ -8,7 +8,6 @@ class Compare extends Component {
   static propTypes = {}
   
   componentDidMount() {
-    console.log("IN Compare", this.props.history);
   }
 
   render() {

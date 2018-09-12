@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import StatChart from './StatChart'
+import Graph from './Graph'
 import StatsToDisplay from './StatsToDisplay'
 import ChampionSelect from './ChampionSelect'
 import champIdList from '../static/ChampIds'
@@ -98,7 +99,6 @@ class Summoner extends Component {
     if(localStorage.getItem(summonerName)) {
       const dataInStorage = JSON.parse(localStorage.getItem(summonerName))
       if(dataInStorage) {
-        console.log('HERE')
         //if data was retrived less than a day ago, return stored data
         if((Date.now() - dataInStorage.timeRetrived) < (24*60*60*1000)) {
           const defaultId = dataInStorage.data[0].champion
@@ -177,6 +177,9 @@ class Summoner extends Component {
   toggleStatButton(stat) {
     this.setState(function(prevState) {
       const newState = this.state
+      for(const oneStat in newState.toggledStats) {
+        newState.toggledStats[oneStat] = false
+      }
       newState.toggledStats[stat] = !prevState.toggledStats[stat]
       return newState
     })
@@ -197,12 +200,10 @@ class Summoner extends Component {
         )
       } else {
         return (
-          <div className={'summoner-div-box'}>
-            <div className={'summoner-flex-box'}>
-              <StatChart sumData={this.state.sumData} camelCaseStats={this.state.camelCaseStats} toggledStats={this.state.toggledStats} champIds={this.state.champIds}/>
-              <StatsToDisplay toggleButton={this.toggleStatButton} toggledStats={this.state.toggledStats} camelCaseStats={this.state.camelCaseStats}/>
-              <ChampionSelect selectedChampions={this.state.selectedChampions} toggleChampion={this.toggleChampionButton} championsPlayed={this.state.championsPlayed} />
-            </div>
+          <div className={'summoner-flex-box'}>
+            <Graph sumData={this.state.sumData} camelCaseStats={this.state.camelCaseStats} toggledStats={this.state.toggledStats} champIds={this.state.champIds}/>
+            <StatsToDisplay toggleButton={this.toggleStatButton} toggledStats={this.state.toggledStats} camelCaseStats={this.state.camelCaseStats}/>
+            <ChampionSelect selectedChampions={this.state.selectedChampions} toggleChampion={this.toggleChampionButton} championsPlayed={this.state.championsPlayed} />
           </div>
         )
       }

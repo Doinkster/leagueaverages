@@ -13,7 +13,6 @@ class StatsToDisplay extends Component {
   static propTypes = {}
 
   componentDidMount() {
-    //console.log(this.state);
   }
 
   onButtonClick(e) {
@@ -43,7 +42,7 @@ class StatsToDisplay extends Component {
     
     return (
       <div className={'stats-to-display-box'}>
-        <span id={'stats-to-display-span'}> Select stats: </span>
+        <span id={'stats-to-display-span'}> Select stat: </span>
         <div className={'stats-to-display'}>
           {buttons}
         </div>
