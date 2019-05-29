@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import Search from './Search'
+import HeaderHomePage from './HeaderHomePage'
+import HeaderSummonerPage from './HeaderSummonerPage'
 
 class Header extends Component {
   render() {
     return(
-      <header className={'header'}>
-        <span className={'logo-span'}> <Link to={'/'}> LeagueAverages </Link> </span>
-        <Search />
-      </header>
+      <React.Fragment>
+        {window.location.pathname === '/' ? <HeaderHomePage /> : <HeaderSummonerPage />}
+      </React.Fragment>
     )
   }
 }

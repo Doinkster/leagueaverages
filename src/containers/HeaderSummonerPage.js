@@ -5,8 +5,8 @@ import Search from './Search'
 class Header extends Component {
   render() {
     return(
-      <header className={'header'}>
-        <span className={'logo-span'}> <Link to={'/'}> LoLAverages </Link> </span>
+      <header className={'header-summonerpage'}>
+        <span className={'logo-span-summonerpage'}> <Link to={'/'}> LoLAverages </Link> </span>
         <Search />
       </header>
     )

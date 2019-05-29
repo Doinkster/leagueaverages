@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Search from './Search'
 
 class HomePage extends Component {
   constructor() {
@@ -14,6 +15,7 @@ class HomePage extends Component {
     return (
       <div className={'homepage-div'}>
         <h1 className={'homepage-header'}>Welcome to LeagueAverages!</h1>
+        <Search />
         <div className={'homepage-subheader-div'}>
           <div className={'homepage-search-info'}>
             <span>Use the search bar above to find a summoner.</span>

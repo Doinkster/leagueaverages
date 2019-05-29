@@ -65,6 +65,7 @@ header {
   padding-top: 10px;
   padding-bottom: 15px;
   background-color: rgb(0, 76, 255);
+  min-height: 6em;
 }
 
 .Axis path,
@@ -216,12 +217,24 @@ header {
   position: relative;
 }
 
+.search-dropdown-box form {
+  border-radius: 2px;
+}
+
 .search-dropdown-box form input {
   height: 2em;
   text-align: center;
   width: 197px;
   border: 1px solid #8C92AC;
   background-color: #f7f7f7;
+}
+
+.homepage-div .search-dropdown-box form input {
+  width: 25em;
+}
+
+.homepage-div .search-dropdown-box-parent {
+  width: 25em;
 }
 
 .search-dropdown-box-parent {
