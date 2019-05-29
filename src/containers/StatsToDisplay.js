@@ -42,10 +42,8 @@ class StatsToDisplay extends Component {
     
     return (
       <div className={'stats-to-display-box'}>
-        <span id={'stats-to-display-span'}> Select stat: </span>
-        <div className={'stats-to-display'}>
-          {buttons}
-        </div>
+        {/*<span id={'stats-to-display-span'}> Select stat: </span>*/}
+        {buttons}
       </div>
     )
   }

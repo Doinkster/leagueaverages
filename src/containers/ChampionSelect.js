@@ -204,10 +204,8 @@ class ChampionSelect extends Component {
 
     return (
       <div className={'champion-select-box'}>
-        <span className={'champion-select-span'}>Currently selected champion: <span>{selectedChamp}</span></span>
-        <div className={'champion-select-div'}>
-          {championList}
-        </div>
+        {/*}<span className={'champion-select-span'}>Currently selected champion: <span>{selectedChamp}</span></span>*/}
+        {championList}
       </div>
     )
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-//TODO: make the divs into unordered table
+
 const PreviousSummoners = (props) => {
   const prevSearches = []
   for(let i = 0; i < localStorage.length; i++) {
@@ -20,7 +20,7 @@ const PreviousSummoners = (props) => {
   )
   return (
     <div className="search-dropdown-content" style={{display: props.showPrev}}>
-      <ul className={props.showPrev ? '' : 'hidden'} onMouseDown={props.onMouseDown}>
+      <ul className={props.showPrev ? '' : 'hidden'} onMouseDown={props.onMouseDown} onMouseUp={props.onMouseUp}>
         {prevSums}
       </ul>
     </div>

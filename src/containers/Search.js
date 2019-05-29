@@ -18,6 +18,7 @@ class Search extends Component {
     this.onMenuClick = this.onMenuClick.bind(this)
     this.onBlur = this.onBlur.bind(this)
     this.onMouseDown = this.onMouseDown.bind(this)
+    this.onMouseUp = this.onMouseUp.bind(this)
     this.submitSummoner = this.submitSummoner.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
@@ -27,11 +28,6 @@ class Search extends Component {
   }
 
   componentDidMount()  {
-    // if(!localStorage.prevSearches) {
-    //   const arr = ['faker']
-    //   localStorage.setItem('prevSearches', JSON.stringify(arr))
-    // }
-    
   }
 
   componentWillUnmount() {
@@ -47,6 +43,10 @@ class Search extends Component {
 
   onMouseDown(e) {
     this.setState({keepMenuOpen: true})
+  }
+
+  onMouseUp(e) {
+    this.setState({showPrev : 'none'})
   }
 
   onBlur(e) {
@@ -84,7 +84,7 @@ class Search extends Component {
         <div className="search-dropdown-box">
           <form acceptCharset="UTF-8" onBlur={this.onBlur} onSubmit={this.submitSummoner}>
             <input type="text" value={this.state.currentTypedName} onClick={this.onMenuClick} onChange={this.handleChange}/>
-            <PreviousSummoners showPrev={this.state.showPrev} onMouseDown={this.onMouseDown} />
+            <PreviousSummoners showPrev={this.state.showPrev} onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp}/>
           </form>
         </div>
       </div>

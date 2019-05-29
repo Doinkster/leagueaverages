@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import StatChart from './StatChart'
 import Graph from './Graph'
 import StatsToDisplay from './StatsToDisplay'
 import ChampionSelect from './ChampionSelect'

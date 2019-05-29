@@ -32,13 +32,13 @@ class Graph extends Component {
             if(this.props.champIds === this.props.sumData[i].champion) {
             for(const stat in this.props.sumData[i]) {
                 if(typeof this.props.sumData[i][stat] === 'number') {
-                if(stat !== 'account_id') {
-                    if(stat in statTotalForSelectedChampion) {
-                    statTotalForSelectedChampion[stat] += this.props.sumData[i][stat]
-                    } else {
-                    statTotalForSelectedChampion[stat] = this.props.sumData[i][stat]
+                    if(stat !== 'account_id') {
+                        if(stat in statTotalForSelectedChampion) {
+                        statTotalForSelectedChampion[stat] += this.props.sumData[i][stat]
+                        } else {
+                        statTotalForSelectedChampion[stat] = this.props.sumData[i][stat]
+                        }
                     }
-                }
                 }
             }
             champCount++
@@ -81,8 +81,8 @@ class Graph extends Component {
                     keys={["value"]}
                     indexBy="stat"
                     margin={{
-                        "top": 50,
-                        "right": 130,
+                        "top": 10,
+                        "right": 0,
                         "bottom": 50,
                         "left": 60
                     }}
@@ -112,6 +112,7 @@ class Graph extends Component {
                     motionStiffness={90}
                     motionDamping={15} 
                     isInteractive={false}
+                    maxValue={dataToRender[0].value + (Math.round(dataToRender[0].value * 10) / 100)}
                 />
             </div>
         )
