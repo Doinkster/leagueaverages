@@ -6,8 +6,9 @@ class Header extends Component {
   render() {
     return(
       <header className={'header-summonerpage'}>
-        <span className={'logo-span-summonerpage'}> <Link to={'/'}> LoLAverages </Link> </span>
+        <span className={'logo-span-summonerpage'}> <Link to={'/'}> LeagueAverages </Link> </span>
         <Search />
+        <div className={'background'} style={{backgroundImage:"url('background.jpg')"}} />
       </header>
     )
   }

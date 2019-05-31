@@ -1,17 +1,6 @@
-// import path from 'path'
-// import express from 'express'
-// import favicon from 'serve-favicon'
-// import bodyParser from 'body-parser'
-// import cluster from 'cluster'
-// import kayn from './kayn.js'
-// import pgp from 'pg-promise'
-// import redis from 'redis'
-//const winston = require('winston')
 const path = require('path')
 const express = require('express')
-const favicon = require('serve-favicon')
 const bodyParser = require('body-parser')
-const cluster = require('cluster')
 const kayn = require('./kayn.js')
 const pgp = require('pg-promise')
 const redis = require('redis')
@@ -36,29 +25,11 @@ const cs = new pgPromise.helpers.ColumnSet([
 // client.auth('Pu3g$xXt5!#AzT#qfnsb')
 //const redisStore = connect(session)
 
-//TODOS:
-//memory leak when going back while searching
-
-//google analytics
-
-//better D3 chart
-
-//add features to server i.e. less downtime
-
-//regions
-
-//redis
-//setting up on ubuntu - https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04
-//https://codeforgeek.com/2015/07/using-redis-to-handle-session-in-node-js/
-//https://stackoverflow.com/questions/47486275/express-session-is-not-storing-in-redis-using-expression-session-connect-redis
-//https://coligo.io/nodejs-api-redis-cache/
-
 const app = express();
 
 app.enable('trust proxy'); //nginx
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(favicon(path.join(__dirname, '../public/', 'favicon.ico')))
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -67,9 +38,23 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(express.static(path.join(__dirname, '../dist/')));
+const dir = path.join(__dirname, '../dist');
+app.use(express.static(dir));
 
-app.listen(8080)
+const dir2 = path.join(__dirname, '../public');
+app.use(express.static(dir2));
+
+app.listen(8080);
+
+app.get('*', function(req, res) {
+  res.set('Content-Type', 'text/html; charset=utf-8')
+  res.sendFile(path.join(__dirname, '../dist/', 'index.html'));
+})
+
+app.get('/robots.txt', function (req, res) {
+  res.type('text/plain');
+  res.send("User-agent: *\nDisallow: /");
+});
 
 app.post('/api/:summoner', async (req, res) => {
   res.set('Content-Type', 'application/json; charset=utf-8')
@@ -77,7 +62,6 @@ app.post('/api/:summoner', async (req, res) => {
   //check if valid name
   const escapedName = req.body.sumName.match(/[^\d\uFB01\uFB02\u00AA\u00B5\u00BA\u00BF-\u1FFF\u2C00-\uD7FF\w _\.]+/g)
   if(escapedName !== null) {
-    console.log('CAUGHT')
     res.send({notFound: true})
     return
   }
@@ -86,7 +70,7 @@ app.post('/api/:summoner', async (req, res) => {
     return
   }
 
-  //logic to use with development api key
+  //logic to use without production api key
   const lowerCaseName = req.body.sumName.toLowerCase().split(' ').join('')
   let accountId
 
@@ -115,7 +99,7 @@ app.post('/api/:summoner', async (req, res) => {
     res.send({notFound: true})
     return
   }
-
+  //end of logic to use without production api key
 
   //logic to use with production api
 
@@ -147,7 +131,7 @@ app.post('/api/:summoner', async (req, res) => {
   //         time_last_searched: undefined
   //       }
   //       return accountIdAsObject
-  //     } catch(e) {
+  //     }.catch(e) {
   //       console.log(e)
   //       res.send({notFound: true})
   //       return
@@ -223,6 +207,7 @@ app.post('/api/:summoner', async (req, res) => {
   //     res.send({notFound: true})
   //     return
   //   }
+
   //   const query = pgPromise.helpers.insert(statsToInsert, cs)
   //   await db.none(query).catch(e => {
   //     console.log(e)
@@ -248,15 +233,4 @@ app.post('/api/:summoner', async (req, res) => {
   // }
 
   //end of production api key logic
-})
-
-app.get('/robots.txt', function (req, res) {
-    res.type('text/plain');
-    res.send("User-agent: *\nDisallow: /");
-});
-
-app.get('*', function(req, res) {
-  console.log('ASDASDASD')
-  res.set('Content-Type', 'text/html; charset=utf-8')
-  res.sendFile(path.join(__dirname, '../dist/', 'index.html'));
 })

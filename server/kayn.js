@@ -1,9 +1,8 @@
-//TODO: build out regions
-//add bottleneck
 const _kayn = require('kayn')
+const apiKey = require('./keys')
 const Kayn = _kayn.Kayn
 const REGIONS = _kayn.REGIONS
-const kayn = Kayn('RGAPI-dfacb293-c0b4-44d4-8b40-53c86fa96ed7')({
+const kayn = Kayn(apiKey.devKey)({
   region: REGIONS.NORTH_AMERICA,
   debugOptions: {
       isEnabled: true,
@@ -33,7 +32,6 @@ const getAccountIdWithName = async summoner => {
   return accountId
 }
 
-//const matchlistToMatches = ({ matches }) => matches
 const matchToGameId = ({ gameId }) => gameId
 
 const getAllMatchIDs = async (matchlistDTO, accountID, getFn) => {
