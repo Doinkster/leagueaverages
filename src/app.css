@@ -26,7 +26,7 @@ body {
 
 footer {
   margin-top: auto;
-  font-size: x-small;
+  font-size: small;
   text-align: center;
   background-color: rgb(233,238,255, .8);
   order: 2;
@@ -59,7 +59,6 @@ footer {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  padding-top: 150px;
 }
 
 .header-homepage {
@@ -153,33 +152,25 @@ footer {
 }
 
 .homepage-about {
-  margin: 0 auto;
-  margin-bottom: 30px;
-  width: 90%;
 }
 
 .homepage-div {
   font-size: 1.2em;
   text-align: center;
   margin: 0 auto;
+  margin-top: 150px;
   width: 60%;
-  padding-top: 50px;
+  height: 40%;
   background-color: rgba(247, 247, 247, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 250px;
 }
 
-.homepage-div .search-dropdown-box-parent {
-  margin: 0 auto;
+.homepage-div .search-dropdown-box {
   padding-bottom: 0px;
   width: 80%;
-  margin-bottom: 20px;
-}
-
-.homepage-header {
-  margin-bottom: 50px;
-}
-
-.homepage-search-info {
-  margin-bottom: 40px;
 }
 
 .homepage-search-info span{
@@ -203,7 +194,6 @@ footer {
   text-decoration: none;
   font-size: 3em;
   font-weight: bold;
-
 }
 
 .logo-span-summonerpage {
@@ -244,10 +234,6 @@ footer {
   background-color: #ccd8ff;
 }
 
-.search-dropdown-box {
-  position: relative;
-}
-
 .search-dropdown-box form input {
   height: 2em;
   text-align: center;
@@ -257,10 +243,11 @@ footer {
   width: 100%;
 }
 
-.search-dropdown-box-parent {
+.search-dropdown-box {
   width: 200px;
   margin: 0 auto;
   padding-bottom: 5px;
+  position: relative;
 }
 
 .search-dropdown-content {
@@ -326,7 +313,8 @@ footer {
 .summoner-flex-box {
   display: flex;
   justify-content: space-around;
-  padding-top: 75px;
+  padding-top: 35px;
+  margin-top: 150px;
   background-color: rgb(233,238,255, .8);
 }
 
@@ -337,6 +325,7 @@ footer {
     z-index: -1;
     opacity: .9;
     background-size: cover;
+    background-position: center;
   }
   
   .bar-graph {
@@ -351,8 +340,23 @@ footer {
     height: 200px;
   }
 
+  .homepage-div {
+    margin-top: 150px;
+    width: 100%;
+    height: 60%;
+    background-color: rgba(247, 247, 247, 0.8);
+    margin-top: auto;
+  }
+
+  .logo-span-homepage {
+    padding-top: 15px;
+  }
+
+  .logo-span-homepage a {
+    font-size: 2.5em;
+  }
+
   .main-div {
-    padding-top: 0px;
     width: 100%;
   }
 
@@ -366,5 +370,7 @@ footer {
     flex-direction: column;
     align-content: center;
     background-color: rgb(233,238,255, .8);
+    padding-top: 15px;
+    height: 100%;
   }
 }
