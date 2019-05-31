@@ -139,6 +139,6 @@ var ids = {
   Quinn: 133,
   Leblanc: 7,
   Ezreal: 81
-}
+};
 
-export default ids
+export default ids;
