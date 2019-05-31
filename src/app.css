@@ -38,7 +38,6 @@ footer {
 }
 
 .app-div {
-  background-color: #3F3F3F;
   height: 100%;
   width: 100%;
   display: flex;
@@ -60,17 +59,14 @@ footer {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  z-index: 1000;
 }
 
 .header-homepage {
   background-color: rgb(0, 76, 255);
-  z-index: 500;
 }
 
 .header-summonerpage {
   background-color: rgb(0, 76, 255);
-  z-index: 500;
 }
 
 .Axis path,
@@ -115,7 +111,6 @@ footer {
   font-size: 16px;
   margin: 4px 2px 4px 4px;
   outline: none;
-  /*z-index: 1;*/
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   border-radius: 20px;
 }
@@ -203,7 +198,7 @@ footer {
 .logo-span-homepage a {
   color: #FFFFFF;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 3em;
   font-weight: bold;
 
 }
@@ -225,6 +220,12 @@ footer {
 
 .no-data-found-div {
   text-align: center;
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 250px;
+  background-color: #f7f7f7;
+  opacity: .8;
+  padding: 20px;
 }
 
 .no-data-found-div span {
@@ -250,19 +251,17 @@ footer {
   border: 1px solid #8C92AC;
   border-radius: 2px;
   background-color: #f7f7f7;
-}
-
-.homepage-div .search-dropdown-box form input {
-  width: 25em;
+  width: 100%;
 }
 
 .homepage-div .search-dropdown-box-parent {
   margin: 0 auto;
-  width: 25em;
+  width: 100%;
 }
 
 .search-dropdown-box-parent {
-  text-align: center;
+  width: 200px;
+  margin: 0 auto;
   padding-bottom: 5px;
 }
 
@@ -275,7 +274,6 @@ footer {
   background-color: #f9f9f9;
   margin: 0;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
   list-style-type: none;
   width: 100%;
 }
@@ -323,7 +321,6 @@ footer {
   font-size: 16px;
   margin: 4px 2px 4px 4px;
   outline: none;
-  /*z-index: 1;*/
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   border-radius:20px; 
 }
