@@ -85,26 +85,11 @@ class Search extends Component {
     const { blankSummonerError } = this.state;
 
     return (
-      <div className="search-dropdown-box-parent">
-        <div className="search-dropdown-box">
-          <form
-            acceptCharset="UTF-8"
-            onBlur={this.onBlur}
-            onSubmit={this.submitSummoner}
-          >
-            <input
-              type="text"
-              value={this.state.currentTypedName}
-              onClick={this.onMenuClick}
-              onChange={this.handleChange}
-            />
-            <PreviousSummoners
-              showPrev={this.state.showPrev}
-              onMouseDown={this.onMouseDown}
-              onMouseUp={this.onMouseUp}
-            />
-          </form>
-        </div>
+      <div className="search-dropdown-box">
+        <form acceptCharset="UTF-8" onBlur={this.onBlur} onSubmit={this.submitSummoner}>
+          <input type="text" value={this.state.currentTypedName} onClick={this.onMenuClick} onChange={this.handleChange}/>
+          <PreviousSummoners showPrev={this.state.showPrev} onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp}/>
+        </form>
       </div>
     );
   }
