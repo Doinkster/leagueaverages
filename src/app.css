@@ -28,7 +28,7 @@ footer {
   margin-top: auto;
   font-size: x-small;
   text-align: center;
-  background-color: #e9eeff;
+  background-color: rgb(233,238,255, .8);
   order: 2;
 }
 
@@ -46,7 +46,7 @@ footer {
 
 .background {
   background-image: ("background.jpg");
-  height: calc(100% - 84.6px);
+  height: 100%;
   width: 100%;
   position: absolute;
   z-index: -1;
@@ -59,6 +59,7 @@ footer {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
+  padding-top: 150px;
 }
 
 .header-homepage {
@@ -152,19 +153,25 @@ footer {
 }
 
 .homepage-about {
+  margin: 0 auto;
   margin-bottom: 30px;
-}
-
-.homepage-about h2 {
-  margin-bottom: 4px;
+  width: 90%;
 }
 
 .homepage-div {
   font-size: 1.2em;
   text-align: center;
   margin: 0 auto;
-  max-width: 600px;
-  padding-top: 250px;
+  width: 60%;
+  padding-top: 50px;
+  background-color: rgba(247, 247, 247, 0.8);
+}
+
+.homepage-div .search-dropdown-box-parent {
+  margin: 0 auto;
+  padding-bottom: 0px;
+  width: 80%;
+  margin-bottom: 20px;
 }
 
 .homepage-header {
@@ -181,10 +188,6 @@ footer {
 
 .homepage-subheader-div {
   font-size: 1.2em;
-}
-
-.loading-div {
-  
 }
 
 .logo-span-homepage {
@@ -251,11 +254,6 @@ footer {
   border: 1px solid #8C92AC;
   border-radius: 2px;
   background-color: #f7f7f7;
-  width: 100%;
-}
-
-.homepage-div .search-dropdown-box-parent {
-  margin: 0 auto;
   width: 100%;
 }
 
@@ -328,11 +326,19 @@ footer {
 .summoner-flex-box {
   display: flex;
   justify-content: space-around;
-  margin-top: 75px;
-  background-color: rgb(233,238,255, .9);
+  padding-top: 75px;
+  background-color: rgb(233,238,255, .8);
 }
 
 @media only screen and (max-width: 1025px) {
+  .background {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    opacity: .9;
+    background-size: cover;
+  }
+  
   .bar-graph {
     order: 1;
     width: 100%;
@@ -346,7 +352,7 @@ footer {
   }
 
   .main-div {
-    padding-top: 10px;
+    padding-top: 0px;
     width: 100%;
   }
 
@@ -359,5 +365,6 @@ footer {
   .summoner-flex-box {
     flex-direction: column;
     align-content: center;
+    background-color: rgb(233,238,255, .8);
   }
 }

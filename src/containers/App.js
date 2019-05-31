@@ -27,6 +27,7 @@ class App extends Component {
     return (
       <div className={'app-div'}>
         <Header />
+        <div className={'background'} style={{backgroundImage:"url('background.jpg')"}} />
         <div className={'main-div'}>
           <Main />
           {this.state.cookieAccepted ? null : <Cookie onCookieOk={this.onCookieOk} />}

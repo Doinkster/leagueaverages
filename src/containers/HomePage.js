@@ -22,11 +22,8 @@ class HomePage extends Component {
           <span><strong>qldurtms</strong></span>
         </div>
         <div className={'homepage-about'}>
-          <h2>What is LeagueAverages?</h2>
-          <span>
-            League Averages is a site designed for the game League of Legends. <br />
-            League Averages allows you to see your stats averaged by each champion for all games played on that champion.
-          </span>
+          League Averages is a site designed for the game League of Legends. 
+          It allows you to see your stats averaged by each champion for all games played on that champion.
         </div>
       </div>
     )

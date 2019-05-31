@@ -8,7 +8,6 @@ class Header extends Component {
       <header className={'header-summonerpage'}>
         <span className={'logo-span-summonerpage'}> <Link to={'/'}> LeagueAverages </Link> </span>
         <Search />
-        <div className={'background'} style={{backgroundImage:"url('background.jpg')"}} />
       </header>
     )
   }

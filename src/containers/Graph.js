@@ -91,7 +91,7 @@ class Graph extends Component {
                     borderColor="inherit:darker(1.6)"
                     axisBottom={{
                         "orient": "bottom",
-                        "tickSize": 5,
+                        "tickSize": 10,
                         "tickPadding": 5,
                         "tickRotation": 0,
                         "legendPosition": "middle",
