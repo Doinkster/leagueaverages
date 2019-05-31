@@ -25,16 +25,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className={'app-div'}>
+      <React.Fragment>
         <Header />
-        <div className={'background'} style={{backgroundImage:"url('background.jpg')"}} />
+        <div className={'background'} style={{backgroundImage: 'url("background.jpg")'}}/>
         <div className={'main-div'}>
           <Main />
-          {this.state.cookieAccepted ? null : <Cookie onCookieOk={this.onCookieOk} />}
           <footer>LeagueAverages isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or 
             managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</footer>
         </div>
-      </div>
+        {this.state.cookieAccepted ? null : <Cookie onCookieOk={this.onCookieOk} />}
+      </React.Fragment>
     ) 
   }
 }
