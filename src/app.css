@@ -143,12 +143,6 @@ footer {
 
 }
 
-<<<<<<< HEAD
-=======
-.homepage-about {
-}
-
->>>>>>> css
 .homepage-div {
   font-size: 1.2em;
   text-align: center;
@@ -345,6 +339,7 @@ footer {
     height: 60%;
     background-color: rgba(247, 247, 247, 0.8);
     margin-top: auto;
+    min-height: 250px;
   }
 
   .logo-span-homepage {
