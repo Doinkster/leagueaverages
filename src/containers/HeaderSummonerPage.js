@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import Search from './Search'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Search from './Search';
 
 class Header extends Component {
   render() {
@@ -13,4 +13,4 @@ class Header extends Component {
   }
 }
 
-export default Header
+export default Header;

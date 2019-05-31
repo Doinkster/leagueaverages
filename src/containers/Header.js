@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import HeaderHomePage from './HeaderHomePage'
-import HeaderSummonerPage from './HeaderSummonerPage'
+import React, { Component } from 'react';
+import HeaderHomePage from './HeaderHomePage';
+import HeaderSummonerPage from './HeaderSummonerPage';
 
 class Header extends Component {
   render() {
@@ -12,4 +12,4 @@ class Header extends Component {
   }
 }
 
-export default Header
+export default Header;

@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const DisplayButton = (props) => {
-  let buttonColor
+  let buttonColor;
   if(props.color) {
-    buttonColor = '#537ad6'
+    buttonColor = '#537ad6';
   } else {
-    buttonColor = 'grey'
+    buttonColor = 'grey';
   }
 
   return (
@@ -15,4 +15,4 @@ const DisplayButton = (props) => {
 
 
 
-export default DisplayButton
+export default DisplayButton;

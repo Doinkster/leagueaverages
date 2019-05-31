@@ -1,16 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PreviousSummoners = (props) => {
-  const prevSearches = []
+  const prevSearches = [];
   for(let i = 0; i < localStorage.length; i++) {
     if(localStorage.key(i) !== 'length') {
       if(localStorage.key(i) !== 'cookieAccepted') {
-        prevSearches.push(localStorage.key(i)) 
+        prevSearches.push(localStorage.key(i)) ;
       }
     }
     if(prevSearches.length === 4) {
-      break
+      break;
     }
   }
   const prevSums = prevSearches.map((summoner) =>
@@ -27,4 +27,4 @@ const PreviousSummoners = (props) => {
   )
 }
 
-export default PreviousSummoners
+export default PreviousSummoners;

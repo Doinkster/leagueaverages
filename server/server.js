@@ -107,7 +107,6 @@ app.post('/api/:summoner', async (req, res) => {
   //   const sumName = req.body.sumName.trim()
   //   // const redisCache = await client.get(sumName)
   //   // if(redisCache) {
-  //   //   console.log('HERE')
   //   //   res.send({ matches: redisCache})
   //   //   return
   //   // }
@@ -184,7 +183,6 @@ app.post('/api/:summoner', async (req, res) => {
   //     for(let j = 0; j < singleMatchData.participants.length; j++) {
   //       const statsForDatabase = {}
   //       let stats = {}
-  //       //console.log('id', accountId.account_id) 
   //       if(singleMatchData.participantIdentities[j].player.currentAccountId === accountId.account_id) {
   //         for(const stat in statsNeeded) {
   //           const lowerCaseStat = statsNeeded[stat]

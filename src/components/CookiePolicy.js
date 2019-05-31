@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const CookiePolicy = props => {
 
@@ -10,4 +10,4 @@ const CookiePolicy = props => {
   )
 }
 
-export default CookiePolicy
+export default CookiePolicy;

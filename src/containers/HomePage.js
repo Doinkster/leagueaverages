@@ -1,14 +1,9 @@
-import React, { Component } from 'react'
-import Search from './Search'
+import React, { Component } from 'react';
+import Search from './Search';
 
 class HomePage extends Component {
   constructor() {
-    super()
-
-  }
-
-  componentDidMount() {
-    //TODO get previous searches
+    super();
   }
 
   render() {
