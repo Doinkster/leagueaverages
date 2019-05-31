@@ -144,12 +144,6 @@ footer {
 
 }
 
-.homepage-about {
-  margin: 0 auto;
-  margin-bottom: 30px;
-  width: 90%;
-}
-
 .homepage-div {
   font-size: 1.2em;
   text-align: center;
@@ -160,18 +154,7 @@ footer {
 }
 
 .homepage-div .search-dropdown-box-parent {
-  margin: 0 auto;
-  padding-bottom: 0px;
   width: 80%;
-  margin-bottom: 20px;
-}
-
-.homepage-header {
-  margin-bottom: 50px;
-}
-
-.homepage-search-info {
-  margin-bottom: 40px;
 }
 
 .homepage-search-info span{
@@ -251,12 +234,6 @@ footer {
   border-radius: 2px;
   background-color: #f7f7f7;
   width: 100%;
-}
-
-.search-dropdown-box-parent {
-  width: 200px;
-  margin: 0 auto;
-  padding-bottom: 5px;
 }
 
 .search-dropdown-content {
